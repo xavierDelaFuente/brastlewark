@@ -1,0 +1,82 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 80px;
+}
+
+.App-header {
+  background-color: #222;
+  height: 2em;
+  padding: .5em;
+  display: flex;
+  color: white;
+  align-items: center;
+  justify-content: center;
+}
+
+.App-title {
+  font-size: 1.3em;
+}
+
+.App-intro {
+  font-size: large;
+  position: absolute;
+  align-items: center;
+  text-align: middle;
+}
+
+.App-body {
+  font-size: large;
+  display: -ms-flexbox;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 40em;
+  background-color: #164F6D;
+}
+
+.App-background{
+  height: auto;
+  width: 40%;
+  border-radius: 20em;
+  padding: .5em 0em;
+}
+
+.App-footer{
+  height: 100%;
+  background-color: black;
+  justify-content: flex-end;
+  display: flex;
+  padding: 0em 1em;
+}
+.App-footer__link{
+  color: white;
+  text-decoration: underline;
+}
+
+@keyframes App-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.popup{
+  position: absolute;
+}
+.popup-container{
+  display: flex;
+  color: white;
+  flex-direction: column;
+  background-color: steelblue;
+  padding: 2em;
+  border: .1em solid #222;
+  border-radius: 2em;
+}
+.popup-header{
+
+}
+.popup-body{
+
+}
