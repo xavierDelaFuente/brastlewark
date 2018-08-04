@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import '../../sass/App.css';
+import '../../../sass/App.css';
 
 export default class popUp extends Component {
   render() {
