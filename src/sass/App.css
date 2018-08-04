@@ -62,10 +62,10 @@
   to { transform: rotate(360deg); }
 }
 
-.popup{
+.welcomePopup{
   position: absolute;
 }
-.popup-container{
+.welcomePopup-container{
   display: flex;
   color: white;
   flex-direction: column;
@@ -74,9 +74,20 @@
   border: .1em solid #222;
   border-radius: 2em;
 }
-.popup-header{
-
+.welcomePopup-header{
+  padding: 1em 0em;
 }
-.popup-body{
-
+.welcomePopup-body{
+  padding: 1em 0em;
+}
+.welcomePopup-buttons{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+.welcomePopup-close{
+  padding: 1em;
+}
+.welcomePopup-accept{
+  padding: 1em;
 }
