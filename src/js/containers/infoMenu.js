@@ -1,21 +1,19 @@
 import { connect } from 'react-redux'
-import { recoverAPIdata } from '../actions/creators/home'
-import HomeLayout from '../components/home/index'
+import infoMenu from '../components/infoMenu/index'
 
 const mapStateToProps = (state, ownProps) => {
   return {
+  	missions: state.home.apiResponse
   }
 }
 
 const mapDispatchToProps = dispatch => {
   return {
-  	getAPIData: ownState => {
-      dispatch(recoverAPIdata())
-    }
+
   }
 }
 
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(HomeLayout)
+)(infoMenu)
