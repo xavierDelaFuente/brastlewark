@@ -1,4 +1,4 @@
-import { FETCH_API_REQUEST, FETCH_API_FAILURE, FETCH_API_SUCCESS } from '../types/home'
+import { FETCH_API_REQUEST, FETCH_API_FAILURE, FETCH_API_SUCCESS, SET_CURRENT_CHARACTER } from '../types/home'
 import axios from 'axios'
 
 export const APIFailure = () => {
@@ -28,5 +28,12 @@ export const recoverAPIdata = () => {
       .catch(error => {
         console.error('error getting Catalog ', error) // eslint-disable-line no-console
       })
+  }
+}
+
+export const setCurrentCharacter = (character) => {
+  return {
+    type: SET_CURRENT_CHARACTER,
+    character
   }
 }

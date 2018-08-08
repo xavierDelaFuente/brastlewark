@@ -123,8 +123,45 @@
   justify-content: space-between;
 }
 
+.infoMenu-panel-container{
+  height: inherit;
+  padding: 1em;
+}
+.infoMenu-panel{
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.infoMenu-panel-card{
+  display: flex;
+    justify-content: space-between;
+    padding-left: 2em;
+}
+
+.infoMenu-panel--thumb {
+    height: 100%;
+    padding: 4em;
+    opacity: 1;
+}
+.infoMenu-panel--thumb__img{
+      height: 16em;
+    width: 10em;
+}
+
+.infoMenu-panel--title{
+  border-radius: 1em;
+  text-decoration: underline;
+}
+
+.infoMenu-panel--name{
+  border: .1em solid tomato;
+  border-radius: 1em;
+  background-color: lightblue;
+}
+
 .infoMenu-panel-elements--container{
-  
+  flex:3;
 }
 
 .infoMenu-panel-element{
@@ -133,16 +170,56 @@
 }
 
 .infoMenu-buttons-container{
-  justify-content: flex-end;
   display: flex;
   padding: 3em;
+  position: absolute;
+  bottom: 0;
+  right: 0;
 }
 .infoMenu-buttons-close{
   height: 3em;
   border: .1em solid #222;
   border-radius: 2em;
   padding: 0 1em;
-
+  background-color: lightgray;
   font-family: arcadeclassic;
 }
+.infoMenu-buttons-close:hover{
+  background-color: lightblue;
+  cursor: pointer;
+}
+.infoMenu-panel-sideMenu-elements--container{
+  flex: 1 1;
+  height: 95%;
+  padding: 0em 1em;
+}
 
+.infoMenu-panel-sideMenu-elements{
+
+}
+
+.is-scrollable{
+  overflow-y: scroll;
+}
+  /* width */
+
+.is-scrollable::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Track */
+.is-scrollable::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+    border-radius: 1em;
+}
+ 
+/* Handle */
+.is-scrollable::-webkit-scrollbar-thumb {
+    border-radius: 1em;
+    background: #888; 
+}
+
+/* Handle on hover */
+.is-scrollable::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+}

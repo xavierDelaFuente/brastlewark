@@ -22,7 +22,6 @@ export default class HomeLayout extends Component {
   
   closeInitPopUp(){
     this.onCloseInitPopUp()
-    this.props.getAPIData()
   }
 
   onCloseInitPopUp(){
@@ -41,8 +40,13 @@ export default class HomeLayout extends Component {
     this.setState({showInfoMenu:false})
   }
 
+  onGetApiData(){
+    if(!this.props.apiData)
+      this.props.getAPIData()
+  }
 
   render() {
+    const { apiData } = this.props
     const backGroundImg = <img src={city} className='App-background' alt='logo' onClick={this.onShowInfoMenu}/>
     let infoMenu = this.state.showInfoMenu && <InfoMenu closeInfoMenu={this.onHideInfoMenu}/>
     let beginPopup =  this.state.initPopup && (
@@ -55,7 +59,7 @@ export default class HomeLayout extends Component {
         </div>
       </PopUp> 
       )
-
+    this.onGetApiData()
     return (
       <div className='App-body' >
         {infoMenu}
