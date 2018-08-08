@@ -3,11 +3,11 @@ import PanelMenu from './panel'
 
 export default class infoMenu extends Component {
   render() {
-    const { missions, closeInfoMenu } = this.props
+    const { characters, closeInfoMenu } = this.props
 
     return (
       <div className='infoMenu'>
-	    <PanelMenu character={missions}  />
+	    <PanelMenu characters={characters}  />
         <div className='infoMenu-buttons-container'>
         	<button className='infoMenu-buttons-close' onClick={closeInfoMenu}> {`Close Menu`}</button>
         </div>

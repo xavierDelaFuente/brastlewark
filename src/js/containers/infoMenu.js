@@ -3,7 +3,7 @@ import infoMenu from '../components/infoMenu/index'
 
 const mapStateToProps = (state, ownProps) => {
   return {
-  	missions: state.home.apiResponse
+  	characters: state.home.apiResponse
   }
 }
 
