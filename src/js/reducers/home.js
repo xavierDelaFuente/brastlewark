@@ -1,7 +1,8 @@
 import { FETCH_API_REQUEST, FETCH_API_FAILURE, FETCH_API_SUCCESS } from '../actions/types/home';
 
 const initialState = {
-  data: {}
+  apiResponse: {},
+  error: null
 }
 
 const home = (state = initialState, action) => {
@@ -13,7 +14,7 @@ const home = (state = initialState, action) => {
     case FETCH_API_SUCCESS:
       return {
         ...state,
-        data: action.data
+        apiResponse: action.apiResponse
       }
     default:
       return state

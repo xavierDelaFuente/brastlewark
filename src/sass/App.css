@@ -1,3 +1,9 @@
+@font-face {
+    font-family: 'arcadeclassic'; 
+    src: url('../css/arcadeclassic.ttf'); 
+}
+
+
 .provider{
 
 }
@@ -22,6 +28,7 @@
 }
 
 .App-title {
+  font-family: arcadeclassic;
   font-size: 1.3em;
 }
 
@@ -38,15 +45,20 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 39em;
+  height: 31em;
   background-color: #164F6D;
 }
 
 .App-background{
   height: auto;
-  width: 40%;
+  width: 35%;
   border-radius: 20em;
   padding: .5em 0em;
+  z-index: 1; 
+}
+
+.App-background:hover{  
+  transform: scale(1.1);
 }
 
 .App-footer{
@@ -68,6 +80,7 @@
 
 .welcomePopup{
   position: absolute;
+  z-index: 1;
 }
 .welcomePopup-container{
   display: flex;
@@ -95,3 +108,41 @@
 .welcomePopup-accept{
   padding: 1em;
 }
+
+.infoMenu{
+  z-index: 2;
+  border: 0.2em solid #222;;
+  border-radius: 5em;
+  height: 80%;
+  width: 90%; 
+  position: absolute; 
+  background-color: #164F6D;
+  opacity: .7;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.infoMenu-panel-elements--container{
+  
+}
+
+.infoMenu-panel-element{
+  display: flex;
+  flex-direction: column;
+}
+
+.infoMenu-buttons-container{
+  justify-content: flex-end;
+  display: flex;
+  padding: 3em;
+}
+.infoMenu-buttons-close{
+  height: 3em;
+  border: .1em solid #222;
+  border-radius: 2em;
+  padding: 0 1em;
+
+  font-family: arcadeclassic;
+}
+

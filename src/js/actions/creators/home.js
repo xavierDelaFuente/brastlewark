@@ -13,10 +13,10 @@ export const APIRequest = () => {
   }
 }
 
-export const APISuccess = data => {
+export const APISuccess = apiResponse => {
   return {
     type: FETCH_API_SUCCESS,
-    data
+    apiResponse
   }
 }
 
@@ -24,8 +24,7 @@ export const recoverAPIdata = () => {
   return (dispatch: Function) => {
     axios
       .get(`https://raw.githubusercontent.com/rrafols/mobile_test/master/data.json`)
-      .then(response => response.json())
-      .then(response => dispatch(APISuccess(response.data)))
+      .then(response => dispatch(APISuccess(response.data.Brastlewark)))
       .catch(error => {
         console.error('error getting Catalog ', error) // eslint-disable-line no-console
       })

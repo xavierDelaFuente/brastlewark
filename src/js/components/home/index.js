@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import city from '../../../data/map.svg'; 
 import '../../../sass/App.css'; 
 import PopUp from '../../containers/popup';
+import InfoMenu from '../../containers/infoMenu'
 import welcomePopupJson from '../../../strings/welcomePopup';
 
 
@@ -9,23 +10,41 @@ export default class HomeLayout extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      initPopup: true
+      initPopup: true,
+      showInfoMenu: false
     }
+    this.onCloseInitPopUp = this.onCloseInitPopUp.bind(this)
+    this.onShowInitPopUp = this.onShowInitPopUp.bind(this)
+    this.onShowInfoMenu = this.onShowInfoMenu.bind(this)
+    this.onHideInfoMenu = this.onHideInfoMenu.bind(this)
     this.closeInitPopUp = this.closeInitPopUp.bind(this)
-    this.showInitPopUp = this.showInitPopUp.bind(this)
   }
   
   closeInitPopUp(){
+    this.onCloseInitPopUp()
+    this.props.getAPIData()
+  }
+
+  onCloseInitPopUp(){
     this.setState({initPopup: false})
   }
 
-  showInitPopUp(){
+  onShowInitPopUp(){
     this.setState({initPopup: true})
-    this.props.recoverAPIdata()
   }
 
+  onShowInfoMenu (){
+    this.setState({showInfoMenu:true})
+  }
+
+  onHideInfoMenu (){
+    this.setState({showInfoMenu:false})
+  }
+
+
   render() {
-    const backGroundImg = <img src={city} className='App-background' alt='logo' />
+    const backGroundImg = <img src={city} className='App-background' alt='logo' onClick={this.onShowInfoMenu}/>
+    let infoMenu = this.state.showInfoMenu && <InfoMenu closeInfoMenu={this.onHideInfoMenu}/>
     let beginPopup =  this.state.initPopup && (
       <PopUp customClass={`welcomePopup`} onClose={this.closeInitPopUp} onCloseText={welcomePopupJson.texts.denyButton}>
         <div className={`welcomePopup-header`}> 
@@ -39,6 +58,7 @@ export default class HomeLayout extends Component {
 
     return (
       <div className='App-body' >
+        {infoMenu}
         {backGroundImg}
         {beginPopup}
       </div>     
