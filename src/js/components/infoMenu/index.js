@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import PanelMenu from './panel'
+import PanelMenu from '../../containers/sideMenu'
 
 export default class infoMenu extends Component {
   render() {

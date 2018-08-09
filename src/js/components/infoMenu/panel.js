@@ -3,13 +3,13 @@ import CardInfoMenu from './card'
 
 export default class panelInfoMenu extends Component {
   onSelectCharacter(id){
-    console.log('the character: ', id)
+    this.props.onSelectCurrentCharacter(id)
   }
 
   render() {
-    const { characters } = this.props
+    const { characters, onSelectCurrentCharacter, currentCharacter } = this.props
 
-    const SideMenu = ({characters}) => (
+    const SideMenu = ({characters, onSelectCurrentCharacter}) => (
       <div className='infoMenu-panel-sideMenu-elements--container'>
         <div className='infoMenu-panel-elements--container'>
             <h1 className='infoMenu-panel--title'>{`Characters: `}</h1>
@@ -43,7 +43,7 @@ export default class panelInfoMenu extends Component {
         <div className='infoMenu-panel'>
           <SideMenu characters={characters} />
           <div className='infoMenu-panel-elements--container'>
-            <CardInfoMenu character={characters[0]} />
+            <CardInfoMenu character={characters[currentCharacter]} onSelectCurrentCharacter={onSelectCurrentCharacter}/>
           </div>
         </div>
         }

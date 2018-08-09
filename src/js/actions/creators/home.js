@@ -1,4 +1,4 @@
-import { FETCH_API_REQUEST, FETCH_API_FAILURE, FETCH_API_SUCCESS, SET_CURRENT_CHARACTER } from '../types/home'
+import { FETCH_API_REQUEST, FETCH_API_FAILURE, FETCH_API_SUCCESS, SELECT_CURRENT_CHARACTER } from '../types/home'
 import axios from 'axios'
 
 export const APIFailure = () => {
@@ -31,9 +31,9 @@ export const recoverAPIdata = () => {
   }
 }
 
-export const setCurrentCharacter = (character) => {
+export const selectCurrentCharacter = (character) => {
   return {
-    type: SET_CURRENT_CHARACTER,
+    type: SELECT_CURRENT_CHARACTER,
     character
   }
 }

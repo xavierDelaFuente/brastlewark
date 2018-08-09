@@ -1,9 +1,9 @@
-import { FETCH_API_REQUEST, FETCH_API_FAILURE, FETCH_API_SUCCESS,SET_CURRENT_CHARACTER } from '../actions/types/home';
+import { FETCH_API_REQUEST, FETCH_API_FAILURE, FETCH_API_SUCCESS,SELECT_CURRENT_CHARACTER} from '../actions/types/home';
 
 const initialState = {
   apiResponse: {},
   error: null,
-  character: {}
+  character: null
 }
 
 const home = (state = initialState, action) => {
@@ -17,7 +17,7 @@ const home = (state = initialState, action) => {
         ...state,
         apiResponse: action.apiResponse
       }
-    case SET_CURRENT_CHARACTER:
+    case SELECT_CURRENT_CHARACTER:
       return { ...state, character: action.character }
     default:
       return state

@@ -1,16 +1,17 @@
 import { connect } from 'react-redux'
-import { setCurrentCharacter } from '../actions/creators/home'
-import panelInfoMenu from '../components/infoMenu/index'
+import { selectCurrentCharacter } from '../actions/creators/home'
+import panelInfoMenu from '../components/infoMenu/panel'
 
 const mapStateToProps = (state, ownProps) => {
   return {
+  	currentCharacter: state.home.character
   }
 }
 
 const mapDispatchToProps = dispatch => {
   return {
-    onSetCurrentCharacter: character => {
-      dispatch(setCurrentCharacter(character))
+    onSelectCurrentCharacter: character => {
+      dispatch(selectCurrentCharacter(character))
     }
   }
 }
