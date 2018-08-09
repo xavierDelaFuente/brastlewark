@@ -45,7 +45,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 31em;
+  height: 30em;
   background-color: #164F6D;
 }
 
@@ -59,9 +59,11 @@
 
 .App-background:hover{  
   transform: scale(1.1);
+  border: .1em solid lightblue;
 }
 
 .App-footer{
+  font-family: arcadeclassic;
   height: 100%;
   background-color: black;
   justify-content: flex-end;
@@ -110,6 +112,7 @@
 }
 
 .infoMenu{
+  font-family: arcadeclassic;
   z-index: 2;
   border: 0.2em solid #222;;
   border-radius: 5em;
@@ -117,7 +120,7 @@
   width: 90%; 
   position: absolute; 
   background-color: #164F6D;
-  opacity: .7;
+  opacity: .95;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -153,11 +156,60 @@
   border-radius: 1em;
   text-decoration: underline;
 }
+.infoMenu-panel--description{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1em;
+  align-items: flex-start;
+  height: 100%;
+  background: lightblue;
+  border: .1em solid tomato;
+  border-radius: 1em;
+}
+
+.infoMenu-panel--description-top {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  height: 50%;
+}
+
+.infoMenu-panel--nametitle{
+
+}
+
+
+.infoMenu-panel--row {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.infoMenu-panel--friends {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.infoMenu-panel--professions {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
 
 .infoMenu-panel--name{
   border: .1em solid tomato;
   border-radius: 1em;
   background-color: lightblue;
+  margin: 0.5em 3em;
+}
+
+.infoMenu-panel--name:hover{
+  background-color: cadetblue;
+  cursor: pointer;
 }
 
 .infoMenu-panel-elements--container{
@@ -167,6 +219,7 @@
 .infoMenu-panel-element{
   display: flex;
   flex-direction: column;
+  width: 50%;
 }
 
 .infoMenu-buttons-container{
@@ -189,7 +242,7 @@
   cursor: pointer;
 }
 .infoMenu-panel-sideMenu-elements--container{
-  flex: 1 1;
+  flex: 2;
   height: 95%;
   padding: 0em 1em;
 }
@@ -201,25 +254,42 @@
 .is-scrollable{
   overflow-y: scroll;
 }
-  /* width */
 
 .is-scrollable::-webkit-scrollbar {
     width: 10px;
 }
 
-/* Track */
 .is-scrollable::-webkit-scrollbar-track {
     background: #f1f1f1; 
     border-radius: 1em;
 }
  
-/* Handle */
 .is-scrollable::-webkit-scrollbar-thumb {
     border-radius: 1em;
     background: #888; 
 }
 
-/* Handle on hover */
 .is-scrollable::-webkit-scrollbar-thumb:hover {
     background: #555; 
+}
+
+.tooltip {
+    pointer-events: none;
+    opacity: 0;
+    display: inline-block;
+    position: absolute;
+    padding: 10px 20px;
+    color: white;
+    border-radius: 20px;
+    margin-top: 20px;
+    text-align: center;
+    font: bold 14px "Helvetica Neue", Sans-Serif;
+    font-stretch: condensed;
+    text-decoration: none;
+    text-transform: uppercase;
+    box-shadow: 0 0 7px black;
+}
+.tooltip, .arrow:after {
+    background: black;
+    border: 2px solid white;
 }

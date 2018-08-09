@@ -3,7 +3,7 @@ import { FETCH_API_REQUEST, FETCH_API_FAILURE, FETCH_API_SUCCESS,SELECT_CURRENT_
 const initialState = {
   apiResponse: {},
   error: null,
-  character: null
+  character: -1
 }
 
 const home = (state = initialState, action) => {

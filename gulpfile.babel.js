@@ -19,7 +19,7 @@ const sass = () => {
     cascade: false
   })]
   return gulp.src([
-    'scss/**/*.scss'
+    'sass/*.scss'
   ])
   .pipe(plumber())
   .pipe(gulpSass({

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import '../sass/App.css';
+import '../sass/App.scss';
 import HomeLayout from './containers/home'
 
 export default class App extends Component {
