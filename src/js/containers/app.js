@@ -1,6 +1,6 @@
 import { connect } from 'react-redux'
 import { recoverAPIdata } from '../actions/creators/home'
-import App from '../components/home/index'
+import App from '../App'
 
 const mapStateToProps = (state, ownProps) => {
   return {
