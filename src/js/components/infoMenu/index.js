@@ -7,10 +7,7 @@ export default class infoMenu extends Component {
 
     return (
       <div className='infoMenu'>
-	    <PanelMenu characters={characters}  />
-        <div className='infoMenu-buttons-container'>
-        	<button className='infoMenu-buttons-close' onClick={closeInfoMenu}> {`Close Menu`} onSetCurrentCharacter={(character) => this.props.onSetCurrentCharacter(character)}</button>
-        </div>
+	     <PanelMenu characters={characters}  closeInfoMenu={closeInfoMenu}/>
       </div>
     );
   }
