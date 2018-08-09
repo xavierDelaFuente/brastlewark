@@ -2,6 +2,10 @@ import React, { Component } from 'react';
 import CardInfoMenu from './card'
 
 export default class panelInfoMenu extends Component {
+  onSelectCharacter(id){
+    console.log('the character: ', id)
+  }
+
   render() {
     const { characters } = this.props
 
@@ -12,7 +16,7 @@ export default class panelInfoMenu extends Component {
         </div>
         <div className='infoMenu-panel-sideMenu-elements--container is-scrollable'>
         {characters.map((character, i) => (
-          <h3 className='infoMenu-panel-sideMenu-element infoMenu-panel--name' key={i}>{character.name}</h3>
+          <h3 className='infoMenu-panel-sideMenu-element infoMenu-panel--name' key={character.id} onClick={this.onSelectCharacter.bind(this, character.id)}>{character.name}</h3>
         ))}
         </div>
       </div>
