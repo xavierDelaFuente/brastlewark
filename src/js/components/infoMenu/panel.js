@@ -1,9 +1,26 @@
 import React, { Component } from 'react';
+import CardInfoMenu from './card'
 
 export default class panelInfoMenu extends Component {
-  render() {
-    const { characters } = this.props
+  onSelectCharacter(id){
+    this.props.onSelectCurrentCharacter(id)
+  }
 
+  render() {
+    const { characters, onSelectCurrentCharacter, currentCharacter } = this.props
+
+    const SideMenu = ({characters, onSelectCurrentCharacter}) => (
+      <div className='infoMenu-panel-sideMenu-elements--container'>
+        <div className='infoMenu-panel-elements--container'>
+            <h1 className='infoMenu-panel--title'>{`Characters: `}</h1>
+        </div>
+        <div className='infoMenu-panel-sideMenu-elements--container is-scrollable'>
+        {characters.map((character, i) => (
+          <h3 className='infoMenu-panel-sideMenu-element infoMenu-panel--name' key={character.id} onClick={this.onSelectCharacter.bind(this, character.id)}>{character.name}</h3>
+        ))}
+        </div>
+      </div>
+    );
     const Test = ({characters}) => (
       <div className='infoMenu-panel-elements--container'>
         {characters.map(character => (
@@ -21,8 +38,15 @@ export default class panelInfoMenu extends Component {
     );
 
     return (
-      <div className='infoMenu-panel'>
-      	{ characters && <Test characters={characters} />}
+      <div className='infoMenu-panel-container'>
+        { characters && 
+        <div className='infoMenu-panel'>
+          <SideMenu characters={characters} />
+          <div className='infoMenu-panel-elements--container'>
+            <CardInfoMenu character={characters[currentCharacter]} onSelectCurrentCharacter={onSelectCurrentCharacter}/>
+          </div>
+        </div>
+        }
     </div>
     );
   }
