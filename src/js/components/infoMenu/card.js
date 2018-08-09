@@ -2,24 +2,24 @@ import React, { Component } from 'react';
 
 export default class cardInfoMenu extends Component {
   render() {
-    const { character } = this.props
+    const { character, onSelectCurrentCharacter, allCharacters } = this.props
     const Professions = ({professions}) => (
         <div className='infoMenu-panel--row'>
           <div>Professions: </div>
           <div className='infoMenu-panel--professions'>
-            {professions && professions.map((profession, i) => (
+            {professions ? professions.map((profession, i) => (
               <div className='infoMenu-panel--profession'>{profession}</div>
-            ))}
+            )) : (<div>Unknownk</div>) }
           </div>
         </div>
     );
-    const Friends = ({friends}) => (
+    const Friends = ({friends, onSelectCurrentCharacter, allCharacters}) => (
       <div className='infoMenu-panel--row'>
         <div>Friends: </div>
         <div className='infoMenu-panel--friends'>
-          {friends && friends.map((friend, i) => (
+          {friends ? friends.map((friend, i) => (
             <div className='infoMenu-panel--friend'>{friend}</div>
-          ))}
+          )) : (<div>Unknownk</div>)  }
         </div>
       </div>
     );
@@ -43,7 +43,7 @@ export default class cardInfoMenu extends Component {
         </div>
       </div>
     );
-    const CharacterCard = ({character}) => (
+    const CharacterCard = ({character, onSelectCurrentCharacter}) => (
       <div className='infoMenu-panel-card'>
         <div className='infoMenu-panel-element'>
           <div className='infoMenu-panel--nametitle'>
@@ -52,7 +52,7 @@ export default class cardInfoMenu extends Component {
           <div className='infoMenu-panel--description'>
             <GeneralData character={character} />
             <Professions professions={character.professions} />
-            <Friends friends={character.friends} />
+            <Friends friends={character.friends} onSelectCurrentCharacter={onSelectCurrentCharacter} allCharacters={allCharacters}/>
           </div>
         </div>
         <div className='infoMenu-panel--thumb'>
@@ -64,7 +64,7 @@ export default class cardInfoMenu extends Component {
     return (
       <div className='infoMenu-panel-card-container'>
         { character && 
-          <CharacterCard character={character} />
+          <CharacterCard character={character} onSelectCurrentCharacter={onSelectCurrentCharacter}/>
         }
     </div>
     );

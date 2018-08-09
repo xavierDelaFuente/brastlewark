@@ -28,12 +28,12 @@ export default class panelInfoMenu extends Component {
         <div className='infoMenu-panel'>
           <SideMenu characters={characters} />
           <div className='infoMenu-panel-elements--container'>
-            <CardInfoMenu character={characters[currentCharacter]} onSelectCurrentCharacter={onSelectCurrentCharacter}/>
+            <CardInfoMenu character={characters[currentCharacter]} onSelectCurrentCharacter={onSelectCurrentCharacter} allCharacters={characters}/>
           </div>
         </div>
         }
         <div className='infoMenu-buttons-container'>
-          <button className='infoMenu-buttons-close' onClick={closeInfoMenu}> {`Close Menu`} onSetCurrentCharacter={(character) => this.props.onSetCurrentCharacter(character)}</button>
+          <button className='infoMenu-buttons-close' onClick={closeInfoMenu}> {`Close Menu`}</button>
         </div>
     </div>
     );

@@ -47,7 +47,7 @@ export default class HomeLayout extends Component {
 
   render() {
     const { apiData } = this.props
-    const backGroundImg = <img src={city} className='App-background' alt='logo' onClick={this.onShowInfoMenu} alt="alternative text" title="this will be displayed as a tooltip"/>
+    const backGroundImg = <img src={city} className='App-background' alt='logo' onClick={this.onShowInfoMenu} alt="alternative text" title="Chech Out the foreigns of Brastlewark"/>
     let infoMenu = this.state.showInfoMenu && <InfoMenu closeInfoMenu={this.onHideInfoMenu}/>
     let beginPopup =  this.state.initPopup && (
       <PopUp customClass={`welcomePopup`} onClose={this.closeInitPopUp} onCloseText={welcomePopupJson.texts.denyButton}>

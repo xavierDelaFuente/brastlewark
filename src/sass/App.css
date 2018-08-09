@@ -254,25 +254,42 @@
 .is-scrollable{
   overflow-y: scroll;
 }
-  /* width */
 
 .is-scrollable::-webkit-scrollbar {
     width: 10px;
 }
 
-/* Track */
 .is-scrollable::-webkit-scrollbar-track {
     background: #f1f1f1; 
     border-radius: 1em;
 }
  
-/* Handle */
 .is-scrollable::-webkit-scrollbar-thumb {
     border-radius: 1em;
     background: #888; 
 }
 
-/* Handle on hover */
 .is-scrollable::-webkit-scrollbar-thumb:hover {
     background: #555; 
+}
+
+.tooltip {
+    pointer-events: none;
+    opacity: 0;
+    display: inline-block;
+    position: absolute;
+    padding: 10px 20px;
+    color: white;
+    border-radius: 20px;
+    margin-top: 20px;
+    text-align: center;
+    font: bold 14px "Helvetica Neue", Sans-Serif;
+    font-stretch: condensed;
+    text-decoration: none;
+    text-transform: uppercase;
+    box-shadow: 0 0 7px black;
+}
+.tooltip, .arrow:after {
+    background: black;
+    border: 2px solid white;
 }
