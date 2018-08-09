@@ -19,5 +19,8 @@
     "formatcss": "node node_modules/prettier/bin-prettier.js --config ./.prettierrc --write \"scss/**/*.scss\"",
     "compile:sass": "node node_modules/gulp/bin/gulp.js sass",
     "eject": "react-scripts eject"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1"
   }
 }

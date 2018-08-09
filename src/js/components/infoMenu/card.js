@@ -3,7 +3,46 @@ import React, { Component } from 'react';
 export default class cardInfoMenu extends Component {
   render() {
     const { character } = this.props
-
+    const Professions = ({professions}) => (
+        <div className='infoMenu-panel--row'>
+          <div>Professions: </div>
+          <div className='infoMenu-panel--professions'>
+            {professions && professions.map((profession, i) => (
+              <div className='infoMenu-panel--profession'>{profession}</div>
+            ))}
+          </div>
+        </div>
+    );
+    const Friends = ({friends}) => (
+      <div className='infoMenu-panel--row'>
+        <div>Friends: </div>
+        <div className='infoMenu-panel--friends'>
+          {friends && friends.map((friend, i) => (
+            <div className='infoMenu-panel--friend'>{friend}</div>
+          ))}
+        </div>
+      </div>
+    );
+    const GeneralData = ({character}) => (
+      <div className='infoMenu-panel--description-top'>
+        <div className='infoMenu-panel--row'>
+          <div>Age: </div>
+          <div className='infoMenu-panel--age'>{character.age}</div>
+        </div>
+        <div className='infoMenu-panel--row'>
+          <div>Height: </div>
+          <div className='infoMenu-panel--height'>{character.height}</div>
+        </div>
+        <div className='infoMenu-panel--row'>
+          <div>Weight: </div>
+          <div className='infoMenu-panel--weight'>{character.weight}</div>
+        </div>
+        <div className='infoMenu-panel--row'>
+          <div>Hair Color: </div>
+          <div className='infoMenu-panel--hairColor'>{character.hair_color}</div>
+        </div>
+      </div>
+    );
     const CharacterCard = ({character}) => (
       <div className='infoMenu-panel-card'>
         <div className='infoMenu-panel-element'>
@@ -11,30 +50,9 @@ export default class cardInfoMenu extends Component {
             <h1>{character.name}</h1>
           </div>
           <div className='infoMenu-panel--description'>
-            <div className='infoMenu-panel--row'>
-              <div>Age: </div>
-              <div className='infoMenu-panel--age'>{character.age}</div>
-            </div>
-            <div className='infoMenu-panel--row'>
-              <div>Height: </div>
-              <div className='infoMenu-panel--height'>{character.height}</div>
-            </div>
-            <div className='infoMenu-panel--row'>
-              <div>Weight: </div>
-              <div className='infoMenu-panel--weight'>{character.weight}</div>
-            </div>
-            <div className='infoMenu-panel--row'>
-              <div>Hair Color: </div>
-              <div className='infoMenu-panel--hairColor'>{character.hair_color}</div>
-            </div>
-            <div className='infoMenu-panel--row'>
-              <div>Professions: </div>
-              <div className='infoMenu-panel--professions'>{character.professions[0]}</div>
-            </div>
-            <div className='infoMenu-panel--row'>
-              <div>Friends: </div>
-              <div className='infoMenu-panel--friends'>{character.friends[0]}</div>
-            </div>
+            <GeneralData character={character} />
+            <Professions professions={character.professions} />
+            <Friends friends={character.friends} />
           </div>
         </div>
         <div className='infoMenu-panel--thumb'>
